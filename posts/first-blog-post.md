@@ -6,7 +6,6 @@ In p5.js, one of the most fundamental and visually impactful things you can do i
 Setup Function
 The setup() function in p5.js is used to initialize and set the basic properties of your canvas. In our case, we're creating a 400 by 400 pixels canvas:
 javascript
-Copy
 function setup() {
 createCanvas(400, 400);
 }
