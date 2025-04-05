@@ -6,6 +6,30 @@ disable_html_sanitization: true
 allow_math: true
 ---
 
+1A
+For loop
+저는 베트남 rmit에서 왔습니다. 그때 친하게 지낸 교수님이 있으셔서 그 교수님의 사이트를 참고하며 for loop를 배웠어요.
+
+베트남 RMIT에서 친하게 지냈던 교수님의 사이트를 참고하며 다시 한 번 복습했어요.
+📌 for문 기초 복습
+for (초기화; 조건; 최종식) {
+// 반복 실행할 코드
+}
+
+- 초기화: 변수를 선언하고 시작값 설정
+- 조건: 반복을 계속할 조건
+- 최종식: 반복이 끝날 때마다 변수 값을 변경
+  예시:
+  for (let i = 0; i < 5; i++) {
+  console.log(i); // 0부터 4까지 출력
+  }
+  중첩 for문으로 격자를 만드는 예시:
+  for (let y = 0; y < height; y += gridSize) {
+  for (let x = 0; x < width; x += gridSize) {
+  rect(x, y, gridSize, gridSize);
+  }
+  }
+
 # This is h1
 
 ![a drippy lemon](logo.svg)
