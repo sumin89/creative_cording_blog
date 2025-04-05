@@ -6,6 +6,8 @@ disable_html_sanitization: true
 allow_math: true
 ---
 
+hihihihihihihi
+
 1A
 For loop
 저는 베트남 rmit에서 왔습니ㅔㅈㅇ다. 그때 친하게 지낸 교수님이 있으셔서 그 교수님의 사이트를 참고하며 for loop를 배웠어요.
