@@ -6,6 +6,7 @@ import * as $_slug_ from "./routes/[slug].tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $feed from "./routes/feed.ts";
 import * as $index from "./routes/index.tsx";
+import * as $utils_markdown from "./routes/utils/markdown.ts";
 
 import type { Manifest } from "$fresh/server.ts";
 
@@ -15,6 +16,7 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/feed.ts": $feed,
     "./routes/index.tsx": $index,
+    "./routes/utils/markdown.ts": $utils_markdown,
   },
   islands: {},
   baseUrl: import.meta.url,
