@@ -1,44 +1,25 @@
+/** @jsx h */
+import { h } from "preact";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { Head } from "$fresh/runtime.ts";
-import { getPost, Post } from "@/utils/posts.ts";
-import { CSS, KATEX_CSS, render } from "$gfm";
+import { extract } from "$std/front_matter/yaml.ts";
+import { renderMarkdown } from "../../utils/markdown.ts";
 
-export const handler: Handlers<Post> = {
-  async GET(_req, ctx) {
-    try {
-      const post = await getPost(ctx.params.slug);
-      return ctx.render(post as Post);
-    } catch {
-      return ctx.renderNotFound();
-    }
+export const handler: Handlers = {
+  async GET(_, ctx) {
+    const slug = ctx.params.slug;
+    const text = await Deno.readTextFile(`./posts/${slug}.md`);
+    const { attrs, body } = extract(text);
+    const content = await renderMarkdown(body);
+    return ctx.render({ attrs, content });
   },
 };
 
-export default function PostPage(props: PageProps<Post>) {
-  const post = props.data;
+export default function BlogPostPage({ data }: PageProps) {
   return (
-    <>
-      <Head>
-        <style dangerouslySetInnerHTML={{ __html: CSS }} />
-        <style dangerouslySetInnerHTML={{ __html: KATEX_CSS }} />
-      </Head>
-      <main class="max-w-screen-md px-4 pt-16 mx-auto">
-        <h1 class="text-5xl font-bold">{post.title}</h1>
-        <time class="text-gray-500">
-          {new Date(post.publishedAt).toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </time>
-        <div
-          class="mt-8 markdown-body"
-          dangerouslySetInnerHTML={{ __html: render(post.content, {
-            disableHtmlSanitization: post.disableHtmlSanitization,
-            allowMath: post.allowMath,
-          }) }}
-        />
-      </main>
-    </>
+    <main class="p-6 max-w-screen-md mx-auto">
+      <h1 class="text-4xl font-bold mb-4">{data.attrs.title}</h1>
+      <p class="text-gray-500 text-sm mb-8">{data.attrs.published_at}</p>
+      <div class="prose" dangerouslySetInnerHTML={{ __html: data.content }} />
+    </main>
   );
 }
