@@ -217,7 +217,7 @@ To understand and eventually create works like Le Duchamp, I realized I need to 
    - Using randomness and rules to generate images
 3. Noise Functions
    - Creating smooth, organic movement
-   - Learning about Perlin noise (random yet natural-looking motion)
+   - Learning about Perlin noise(random yet natural-looking motion)
 4. Particle Systems
    - Simulating small moving elements
    - Learning basic motion physics
@@ -238,7 +238,7 @@ To understand and eventually create works like Le Duchamp, I realized I need to 
 ✨ Final Thoughts
 Through this learning journey and while preparing for this assignment, I feel like I gained a much deeper understanding of for loops and how to use them in creative ways.
 When I first saw Le Duchamp, I was honestly just filled with wonder—How was that even made? I still don’t understand every technical detail, but through research and curiosity, I’ve discovered that generative art is such an inspiring field.
-I'm still a beginner, but I hope that one day I can create something like that too. Thanks so much for reading! 😊
+I'm still a beginner, but I hope that one day I can create something like that too.Thanks so much for reading! 😊
 
 ## Embedding video:
 
