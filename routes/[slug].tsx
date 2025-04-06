@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { extract } from "$std/front_matter/yaml.ts";
+import { extract } from "https://deno.land/std@0.224.0/front_matter/yaml.ts";
 import { renderMarkdown } from "../../utils/markdown.ts";
 
 export const handler: Handlers = {
